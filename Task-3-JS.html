@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-3-JAVASCRIPT</title>
+    <script>
+        window.onload = function () {
+            document.getElementById('n1').defaultValue = "0";
+            document.getElementById('n2').defaultValue = "1";
+            document.getElementById('mult').addEventListener('click', function () {
+                let num1 = parseInt(document.getElementById('n1').value);
+                let num2 = parseInt(document.getElementById('n2').value);
+                var ans = num1 * num2;
+                document.getElementById('ans').innerHTML = ans;
+            })
+            document.getElementById('divd').addEventListener('click', function () {
+                let num1 = parseInt(document.getElementById('n1').value);
+                let num2 = parseInt(document.getElementById('n2').value);
+                if (num2 === 0) {
+                    document.getElementById('ans').innerHTML = "Cannot divide by zero";
+                }
+                else {
+                    var ans = num1 / num2;
+                    document.getElementById('ans').innerHTML = ans;
+                }
+            })
+        };
+    </script>
+</head>
+
+<body>
+    <div style="line-height: 30px;">
+        <div>
+            <label for="n1">1st Number :</label>
+            <input type="text" id="n1" name="n1">
+        </div>
+        <div>
+            <label for="n2">2nd Number :</label>
+            <input type="text" id="n2" name="n2">
+        </div>
+        <div>
+            <button id="mult"> Multiply</button>
+            <button id="divd"> Divide</button>
+        </div>
+    </div>
+    <div>
+        <p>The result is :</p>
+        <p id="ans"></p>
+    </div>
+</body>
+</html>

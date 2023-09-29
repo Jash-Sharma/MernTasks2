@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-2-JAVASCRIPT</title>
+    <script>
+        window.onload = function () {
+            var st = prompt("Enter a string");
+            document.getElementById('n').innerHTML = st;
+            let rev = st.split("")
+                        .sort((a,b) => a.localeCompare(b))
+                        .join("");
+            document.getElementById('r').innerHTML = rev;
+        };
+    </script>
+</head>
+
+<body>
+    <div>
+        <p>The string to entered is : <span id="n"></span></p>
+        <p>The reversed string is : <span id="r"></span></p>
+    </div>
+
+</body>
+
+</html>
