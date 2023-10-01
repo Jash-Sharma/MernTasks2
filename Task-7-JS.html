@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=margin: auto auto;, initial-scale=1.0">
+    <title>Task-7-Javascript</title>
+    <style>
+        #train {
+            position: relative;
+            cursor: pointer;
+        }
+
+        #cont {
+            text-align: center;
+            color: blue;
+            font-size: xx-large;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        #cont1 {
+            padding-bottom: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="train" src="ToyTrain.png">
+    <div id="cont">
+        <div id="cont1">Click the following buttons to handle animations</div>
+        <button value="start" id="on">Start</button>
+        <button value="off" id="off">Stop</button>
+    </div>
+    <script>
+        let timer; // Define a variable to store the timer ID
+
+        on.onclick = function () {
+            let start = Date.now();
+            timer = setInterval(function () {
+                let timePassed = Date.now() - start;
+                train.style.left = timePassed / 5 + 'px';
+                if (timePassed > 4500) clearInterval(timer);
+            }, 10);
+        }
+
+        off.onclick = function () {
+            clearInterval(timer);
+        }
+    </script>
+</body>
+
+</html>
