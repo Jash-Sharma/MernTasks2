@@ -15,9 +15,11 @@
 
         #d2 {
             background-color: rgb(244, 244, 244);
+            margin: auto auto;
 
         }
-        #d3{
+
+        #d3 {
             font-family: 'Lucida Handwriting Std', sans-serif;
         }
 
@@ -25,48 +27,52 @@
             width: 80%;
         }
 
-        #d5 {
-            font-size:smaller;
-        }
-        #sp1 {
-            padding-right: 45px;
-            padding-left: 30px;
-        }
-        #img1{
+        #img1 {
             width: 130px;
             height: 50px;
         }
+
+        #d5 {
+            width: 80%;
+            margin: auto auto;
+            font-size: smaller;
+            display: flex;
+        }
+
+        #sp2 {
+            margin-left: auto;
+        }
     </style>
     <script>
-        function check(){
-        var uname = document.getElementById('i1').value;
-        const uregex = /^[a-zA-Z0-9._]+$/ ;
-        if (uname.length > 30) {
-            alert("Username should be less than 30 characters");
-            document.getElementById('i1').value = "";
-            return false
+        function check() {
+            var uname = document.getElementById('i1').value;
+            const uregex = /^[a-zA-Z0-9._]+$/;
+            if (uname.length > 30) {
+                alert("Username should be less than 30 characters");
+                document.getElementById('i1').value = "";
+                return false
+            }
+
+            if (!uregex.test(uname)) {
+                alert("Username must only contain alphabets, numbers , underscore and period!")
+                document.getElementById('i1').value = "";
+                return false
+            }
+            var pass = document.getElementById('i2').value;
+            if (pass.length < 8 || pass.length > 20) {
+                alert("Password should be more than 8 and less than 20 characters");
+                document.getElementById('i2').value = "";
+                return false
+            }
+            return true
         }
-        
-        if (!uregex.test(uname)){
-            alert("Username must only contain alphabets, numbers , underscore and period!")
-            document.getElementById('i1').value = "";
-            return false
-        }
-        var pass = document.getElementById('i2').value;
-        if (pass.length < 8 || pass.length > 20){
-            alert("Password should be more than 8 and less than 20 characters");
-            document.getElementById('i2').value = "";
-            return false
-        }
-        return true
-    }
     </script>
 </head>
 
 <body>
     <div class="" id="d1">
-        <div id="d2" class="shadow rounded w-25  ms-auto me-auto ">
-            <div class="pt-5 pb-3 fst-italic text-center display-6" id ="d3">
+        <div id="d2" class="shadow rounded w-25">
+            <div class="pt-5 pb-3 fst-italic text-center display-6" id="d3">
                 <img id="img1" src="insta.png" alt="">
             </div>
             <form>
@@ -89,11 +95,12 @@
                             </svg></span>
                         <input type="password" class="form-control" placeholder="Password" id="i2" required>
                     </div>
-                    <input class="btn btn-primary w-100" type="submit" name="" id="s1" value="Log in" onclick="check()"> <br>
+                    <input class="btn btn-primary w-100" type="submit" name="" id="s1" value="Log in" onclick="check()">
+                    <br>
                 </div>
                 <div class="pt-3 pb-5 " id="d5">
                     <span id="sp1"><input type="checkbox" name="" id="">Remember me</span>
-                    <span><a href="#" class="text-decoration-none ">Forgot Password?</a></span>
+                    <span id="sp2"><a href="#" class="text-decoration-none ">Forgot Password?</a></span>
                 </div>
             </form>
         </div>
