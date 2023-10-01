@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-8-Javascript</title>
+    <style>
+        h2 {
+            text-align: center;
+            color: blue;
+            padding-top: 20px;
+        }
+
+        form {
+            margin-left: auto;
+        }
+
+        table,
+        th,
+        td {
+            border: 0px solid white;
+            border-collapse: collapse;
+        }
+        th{
+            text-align: end;
+        }
+        #t1,#t2,#t3,#t4,#t5,#t6,#t7,#t8,#t9{
+            color: red;
+        }
+
+        #cont{
+            background-image: radial-gradient(at top,rgb(255, 255, 170),rgb(255, 66, 255));
+            height: 100vh;
+        }
+    </style>
+    <script>
+        function check(){
+            const inp1 = document.getElementById("fname");
+            if (!inp1.checkValidity()){
+                document.getElementById("t1").innerHTML = "POOR";
+                return false;
+            } else {
+                document.getElementById("t1").innerHTML = "";
+            }
+            const inp2 = document.getElementById("lname");
+            if (!inp1.checkValidity()) {
+                document.getElementById("t2").innerHTML = "POOR";
+                return false;
+            } else {
+                document.getElementById("t2").innerHTML = "";
+            }
+            const inp3 = document.getElementById("email");
+            if (!inp3.checkValidity()) {
+                document.getElementById("t3").innerHTML = "POOR";
+                return false;
+            } else {
+                document.getElementById("t3").innerHTML = "";
+            }
+            const inp4 = document.getElementById("pass");
+            if (!inp4.checkValidity()) {
+                document.getElementById("t4").innerHTML = "POOR";
+                return false;
+            } else {
+                document.getElementById("t4").innerHTML = "";
+            }
+            const inp5 = document.getElementById("repass");
+            if ((!inp5.checkValidity()) || inp4.value !== inp5.value) {
+                document.getElementById("t5").innerHTML = "POOR OR MISMATCH";
+                return false;
+            } else {
+                document.getElementById("t5").innerHTML = "";
+            }
+            const inp6 = document.getElementById("age");
+            if (!inp6.checkValidity()) {
+                document.getElementById("t6").innerHTML = "POOR";
+                return false;
+            } else {
+                document.getElementById("t6").innerHTML = "";
+            }
+            const inp7 = document.getElementById("pno");
+            if (!inp7.checkValidity()) {
+                document.getElementById("t7").innerHTML = "POOR";
+                return false;
+            } else {
+                document.getElementById("t7").innerHTML = "";
+            }
+            const inp8 = document.getElementById("addr");
+            if (!inp8.checkValidity()) {
+                document.getElementById("t8").innerHTML = "POOR";
+                return false;
+            } else {
+                document.getElementById("t8").innerHTML = "";
+            }
+            const inp9 = document.getElementById("state");
+            if (!inp9.checkValidity()) {
+                document.getElementById("t9").innerHTML = "POOR";
+                return false;
+            } else {
+                document.getElementById("t9").innerHTML = "";
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div id = "cont">
+        <h2>Registration Form</h2>
+        <form>
+            <table style="margin-left: auto;
+                    margin-right: auto;">
+                <tr>
+                    <th><label for="fname">First Name</label></th>
+                    <td><input size="60" type="text" name="fname" id="fname" required></td>
+                    <td>
+                        <span id="t1"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="lname">Last Name</label></th>
+                    <td><input size="60" type="text" name="lname" id="lname" required></td>
+                    <td id = "t2"></td>
+                </tr>
+                <tr>
+                    <th><label for="email">Email</label></th>
+                    <td><input size="60" type="email" name="email" id="email" required></td>
+                    <td id = "t3"></td>
+                </tr>
+                <tr>
+                    <th> <label for="pass"> Password</label></th>
+                    <td> <input size="60" type="password" id="pass" name="pass" required></td>
+                    <td id = "t4"></td>
+                </tr>
+                <tr>
+                    <th><label for="repass">Re-enter Password</label></th>
+                    <td><input size="60" type="password" id="repass" name="repass" required></td>
+                    <td id = "t5"></td>
+                </tr>
+                <tr>
+                    <th rowspan="2"><label for="gender">Gender:</label></th>
+                    <td><input type="radio" name="gender" id="gender" value="Male">Male</td>
+                <tr>
+                    <td><input type="radio" name="gender" id="gender" value="Female">Female</td>
+                </tr>
+                </tr>
+                <tr>
+                    <th><label for="age">Age:</label></th>
+                    <td><input size="60px" type="text" name="age" id="age" required></td>
+                    <td id = "t6"></td>
+                </tr>
+                <tr>
+                    <th><label for="pno">Phone Number</label></th>
+                    <td><input size="60" type="text" name="pno" id="pno" required></td>
+                    <td id = "t7"></td>
+                </tr>
+                <tr>
+                    <th><label for="addr">Address</label></th>
+                    <td>
+                        <textarea name="addr" id="addr" cols="57" rows="5" required></textarea>
+                        <td id = "t8"></td>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="state">State</label></th>
+                    <td><input size="60" type="text" name="state" id="state" required></td>
+                    <td id = "t9"></td>
+                </tr>
+                <tr>
+                    <th><label for="country">Country</label></th>
+                    <td><select name="country" id="country" alt>
+                            <option value="invalid">Choose your country</option>
+                            <option value="India">India</option>
+                            <option value="China">China</option>
+                            <option value="Nepal">Nepal</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <th><label for="lang">Languages known</label></th>
+                    <td>
+                        <input type="checkbox" name="lang" id="lang" value="English">English
+                        <input type="checkbox" name="lang" id="lang" value="Kanadda">Kanadda
+                        <input type="checkbox" name="lang" id="lang" value="Hindi">Hindi
+                        <input type="checkbox" name="lang" id="lang" value="Telugu">Telugu
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="checkbox" name="accept" id="accept" value="yes">Hereby I declare all
+                        the
+                        given details are true</td>
+                </tr>
+                <tr style="text-align: end;">
+                    <td colspan="2">Login in to <a href="https://ethnus.com/" target="_blank">Ethnus</a> website </td>
+                </tr>
+            </table>
+            <br>
+            <div style="text-align: center;"><input style="background-color: red; color: white; border-radius: 15px;"type="submit" value="REGISTER" onclick = "check()"></div>
+        </form>
+    </div>
+</body>
+
+</html>

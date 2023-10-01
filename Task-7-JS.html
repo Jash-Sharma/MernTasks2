@@ -39,7 +39,8 @@
             timer = setInterval(function () {
                 let timePassed = Date.now() - start;
                 train.style.left = timePassed / 5 + 'px';
-                if (timePassed > 4500) clearInterval(timer);
+                if (timePassed > 5000)
+                    clearInterval(timer);
             }, 10);
         }
 
